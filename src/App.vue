@@ -7,9 +7,21 @@ console.log(records)
 
 const localRecords = ref(records)
 
+const displayRecords = ref(records)
+
 const stockOnly = ref(false)
 
 console.log(localRecords)
+
+
+const handleStockCheckboxe =()=>{
+  if(stockOnly.value){
+    displayRecords.value = localRecords.value.filter(album => album.stock > 0);
+  }else{
+    displayRecords.value = localRecords.value
+  }
+}
+
 
 </script>
 
@@ -25,7 +37,7 @@ console.log(localRecords)
 
           <!-- component -->
 
-          <CardAlbum v-for="album in localRecords"
+          <CardAlbum v-for="album in displayRecords"
             :album="album"
           />
 
@@ -52,6 +64,7 @@ console.log(localRecords)
                               type="checkbox" 
                               class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                               v-model="stockOnly"
+                              @change="handleStockCheckboxe"
                             >
                           </div>
                           <div class="ml-3 text-sm">
