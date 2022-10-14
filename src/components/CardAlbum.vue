@@ -12,7 +12,7 @@
                     <h3 class="text-black text-xl title-font mb-2"> {{album.artist}} <span class="font-light mr-2">{{album.year}}</span></h3>
                     <p class="leading-relaxed text-base">{{album.comment}}</p>
                     <div class="py-4">
-                        <div class=" inline-block mr-2" > <!-- quand le stock est ok  -->
+                        <div class=" inline-block mr-2" v-if="album.stock>0"> <!-- quand le stock est ok  -->
                             <div class="flex  pr-2 h-full items-center">
                                 <svg class="text-green-500 w-6 h-6 mr-1"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
                                     <path stroke="none" d="M0 0h24v24H0z"/>  
@@ -22,7 +22,7 @@
                                 <p class="title-font font-medium">{{album.stock}} stock</p>
                             </div>
                         </div>                    
-                        <div class=" inline-block mr-2" > <!-- quand le stock est à zéro  -->
+                        <div class=" inline-block mr-2" v-else > <!-- quand le stock est à zéro  -->
                             <div class="flex  pr-2 h-full items-center">
                                 <svg class="text-gray-500 w-6 h-6 mr-1"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  
                                     <circle cx="12" cy="12" r="10" />  
