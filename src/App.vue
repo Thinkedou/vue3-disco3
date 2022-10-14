@@ -63,7 +63,7 @@
                               </button>
                               <button
                                   type="button"
-                                  class="border border-teal-500 bg-teal-500 text-white rounded-md px-4 py-2 m-2 ease select-none hover:bg-teal-400"
+                                  class="border border-teal-500 bg-teal-500 text-white rounded-md px-4 py-2 m-2 ease select-none hover:bg-black-800"
                                 >
                                 -
                               </button>
