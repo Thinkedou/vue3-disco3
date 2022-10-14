@@ -4,7 +4,8 @@
                     <div class="p-5 bg-white flex items-center mx-auto border-b shadow-md mb-10 border-gray-400 rounded-lg sm:flex-row flex-col">
                     <div class="sm:w-44 sm:h-44 lg:w-40 lg:h-40 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
                         <img
-                          :src="album.coverUrl"/>
+                          :src="getCoverUrl(album.coverUrl)"
+                          />
                     </div>
                   <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                     <h1 class="text-black text-2xl title-font font-bold mb-2">{{album.title}}</h1>
@@ -66,7 +67,7 @@
 </template>
 
 <script setup>
-
+  import defaultCover from '@/assets/img/default.jpg'
   const props = defineProps({
     album:{
       type:Object,
@@ -74,6 +75,10 @@
     }
   })
 
+  const getCoverUrl = (coverUrl=false)=>{
+    return coverUrl || defaultCover
+  }
+  
 
 
 </script>
