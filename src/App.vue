@@ -7,6 +7,8 @@ console.log(records)
 
 const localRecords = ref(records)
 
+const stockOnly = ref(false)
+
 console.log(localRecords)
 
 </script>
@@ -44,11 +46,18 @@ console.log(localRecords)
 
                         <div class="flex items-start">
                           <div class="flex h-5 items-center">
-                            <input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                            <input 
+                              id="comments" 
+                              name="comments" 
+                              type="checkbox" 
+                              class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                              v-model="stockOnly"
+                            >
                           </div>
                           <div class="ml-3 text-sm">
                             <label for="comments" class="font-medium text-cyan-700">In stock only</label>
                           </div>
+                          <pre>{{stockOnly}}</pre>
                         </div>
    
                       </div>
