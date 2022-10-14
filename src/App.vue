@@ -23,8 +23,8 @@ console.log(localRecords)
 
           <!-- component -->
 
-          <CardAlbum 
-            :album="localRecords[3]"
+          <CardAlbum v-for="album in localRecords"
+            :album="album"
           />
 
           
