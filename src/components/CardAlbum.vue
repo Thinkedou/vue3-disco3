@@ -44,12 +44,14 @@
                                 <button
                                   type="button"
                                   class="border border-teal-500 bg-teal-500 text-white rounded-md px-4 py-2 m-2 ease select-none hover:bg-teal-400"
+                                  @click="increaseStock"
                                 >
                                 +
                               </button>
                               <button
                                   type="button"
                                   class="border border-teal-500 bg-teal-500 text-white rounded-md px-4 py-2 m-2 ease select-none hover:bg-black-800"
+                                  @click="decreaseStock"
                                 >
                                 -
                               </button>
@@ -79,6 +81,12 @@
     return coverUrl || defaultCover
   }
   
+  const increaseStock = ()=>{
+      props.album.stock++
+  }
+  const decreaseStock = ()=>{
+      props.album.stock--
+  }
 
 
 </script>
