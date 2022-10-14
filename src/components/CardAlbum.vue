@@ -4,12 +4,12 @@
                     <div class="p-5 bg-white flex items-center mx-auto border-b shadow-md mb-10 border-gray-400 rounded-lg sm:flex-row flex-col">
                     <div class="sm:w-44 sm:h-44 lg:w-40 lg:h-40 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
                         <img
-                          src="https://www.mowno.com/wp-content/uploads/2018/04/MONOLITHE-NOIR-rin.jpg"/>
+                          :src="album.coverUrl"/>
                     </div>
                   <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                     <h1 class="text-black text-2xl title-font font-bold mb-2">{{album.title}}</h1>
-                    <h3 class="text-black text-xl title-font mb-2">Monolithe Noir <span class="font-light mr-2">2022</span></h3>
-                    <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+                    <h3 class="text-black text-xl title-font mb-2"> {{album.artist}} <span class="font-light mr-2">{{album.year}}</span></h3>
+                    <p class="leading-relaxed text-base">{{album.comment}}</p>
                     <div class="py-4">
                         <div class=" inline-block mr-2" > <!-- quand le stock est ok  -->
                             <div class="flex  pr-2 h-full items-center">
@@ -18,7 +18,7 @@
                                     <circle cx="12" cy="12" r="9" />  
                                     <path d="M9 12l2 2l4 -4" />
                                 </svg>
-                                <p class="title-font font-medium">5 stock</p>
+                                <p class="title-font font-medium">{{album.stock}} stock</p>
                             </div>
                         </div>                    
                         <div class=" inline-block mr-2" > <!-- quand le stock est à zéro  -->
@@ -35,7 +35,7 @@
                     <div class="md:flex font-bold text-gray-800">
                         <div class="w-full md:w-1/2 flex space-x-3">
                             <div class="w-1/2">
-                                <p >#15</p> <!-- pitchfork pos  -->
+                                <p >pitchfork pos : #{{album.pitchforkPos}}</p> <!-- pitchfork pos  -->
                             </div>
                         </div>
                         <div class="w-full">
