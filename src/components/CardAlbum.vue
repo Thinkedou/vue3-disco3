@@ -1,13 +1,16 @@
 <template>
-     <section class="text-gray-600 body-font "> <!-- one records -->
+     <section class="text-gray-600 body-font"> <!-- one records -->
                   <div class="container px-5 mx-auto ">
-                    <div class="p-5 bg-white flex items-center mx-auto border-b shadow-md mb-10 border-gray-400 rounded-lg sm:flex-row flex-col">
-                    <div class="sm:w-44 sm:h-44 lg:w-40 lg:h-40 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
-                        <img
-                          :src="getCoverUrl(album.coverUrl)"
-                          />
-                    </div>
-                  <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                    <div 
+                      class="p-5 bg-white flex items-center mx-auto border-b shadow-md mb-10 border-grey-400 rounded-lg sm:flex-row flex-col"
+                      :class="{'border-b-4 border-yellow-200':isFav}"
+                    >
+                      <div class="sm:w-44 sm:h-44 lg:w-40 lg:h-40 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
+                          <img
+                            :src="getCoverUrl(album.coverUrl)"
+                            />
+                      </div>
+                      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                     <h1 class="text-black text-2xl title-font font-bold mb-2">{{album.title}}</h1>
                     <h3 class="text-black text-xl title-font mb-2"> {{album.artist}} <span class="font-light mr-2">{{album.year}}</span></h3>
                     <p class="leading-relaxed text-base">{{album.comment}}</p>
@@ -44,14 +47,14 @@
                                 <button
                                   type="button"
                                   class="border border-teal-500 bg-teal-500 text-white rounded-md px-4 py-2 m-2 ease select-none hover:bg-teal-400"
-                                  @click="increaseStock"
+                                  @click.stop="increaseStock"
                                 >
                                 +
                               </button>
                               <button
                                   type="button"
                                   class="border border-teal-500 bg-teal-500 text-white rounded-md px-4 py-2 m-2 ease select-none hover:bg-purple-800"
-                                  @click="decreaseStock"
+                                  @click.stop="decreaseStock"
                                 >
                                 -
                               </button>
@@ -63,17 +66,20 @@
                   </div>
               </section> <!-- end one records -->
 
-
-
-
 </template>
 
 <script setup>
   import defaultCover from '@/assets/img/default.jpg'
+
+ 
   const props = defineProps({
     album:{
       type:Object,
       required:true
+    },
+    isFav:{
+      type:Boolean,
+      default:false
     }
   })
 
@@ -92,4 +98,6 @@
 </script>
 
 <style scoped>
+
+
 </style>
