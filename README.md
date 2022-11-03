@@ -1,14 +1,4 @@
-# vue-disco3
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+# disco-vue3
 
 ## Project Setup
 
@@ -27,3 +17,35 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Importer les assets
+Importer le layout et les assets (css, js, img) 
+## Créer une data reactive()
+Rendre l'album d'exemple dynamique
+
+## Rajouter un album de son choix
+Histoire de manipuler un peu le data-model
+## Créer un composant CardAlbum
+
+
+## v-for
+Charger allRecords.js et afficher tous les albums, attention à **:key**
+## Les images 
+Switcher sur l'image default.jpg si un album n'a pas de cover 
+
+## Gestion des stocks 
+Permettre la gestion des stocks via les btns [+] & [-]
+
+## Filtres
+Brancher les filtres  
+
+## v-if ou v-show pour picto stock
+Afficher le bon picto en fonction du stock de l'album
+
+## mettre des albums en favoris 
+un click sur la card > fav, un autre > unfav 
+Lier une class si fav pour highlight *border-rose-600*
+? est-ce que les btns stock marchent toujours?
+
+## afficher le stock total avec computed & reduce()
+Afficher ça à côté du title dans la nav ou dans la zone filtre
